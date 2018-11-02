@@ -1,0 +1,8 @@
+{
+    "jshint.options": {
+        "esversion": 6
+    },
+    "typescript.suggestionActions.enabled": false,
+    "javascript.validate.enable": false
+    
+}
