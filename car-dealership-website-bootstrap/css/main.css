@@ -42,6 +42,14 @@ body {
 /* navbar */
 .navbar {
   background: var(--mainWhite);
+  transition: all s2 ease-in-out;
+}
+.navbar-change {
+  position: fixed;
+  width: 100%;
+  padding: 1rem;
+  background: var(--mainYellow);
+  z-index: 100;
 }
 
 .navbar-icon {

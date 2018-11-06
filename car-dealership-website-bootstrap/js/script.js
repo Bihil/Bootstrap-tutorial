@@ -1,6 +1,17 @@
-window.addEventListener('load', () =>
-  document.querySelector('.preloader')
+
+const Events = (() => {
+  const navbar = document.querySelector('.navbar');
+
+
+  // hide preloader
+  window.addEventListener('load', () => document.querySelector('.preloader')
     .classList.add('hidePreloader'));
+  // add class to navbar
+  window.addEventListener('scroll', () => {
+    let height = document.documentElement.scrollTop || window.pageYOffset;
+    (height > 76) ? (navbar.classList.add('navbar-change')) : (navbar.classList.remove('navbar-change'));
+  });
+})();
 // create cars
 const CreateCars = (() => {
   // car data
