@@ -1,7 +1,7 @@
 window.addEventListener('load', () =>
   document.querySelector('.preloader')
     .classList.add('hidePreloader'));
-
+// create cars
 const CreateCars = (() => {
   // car data
   const cars = [];
@@ -49,7 +49,7 @@ const CreateCars = (() => {
     specialCars
   };
 })();
-
+// display special cars
 const DisplaySpecialCars = ((CreateCars) => {
   const specialCars = CreateCars.specialCars;
   const info = document.querySelector('.featured-info');
@@ -81,7 +81,7 @@ const DisplaySpecialCars = ((CreateCars) => {
     }
   });
 })(CreateCars);
-
+// display cars
 const DisplayCars = ((CreateCars) => {
   // all cars
   const cars = CreateCars.cars;
@@ -125,3 +125,24 @@ const DisplayCars = ((CreateCars) => {
   });
 
 })(CreateCars);
+// filter cars
+const FilterCars = (() => {
+  const filter = document.querySelectorAll('.filter-btn');
+  filter.forEach((btn) => {
+    btn.addEventListener('click', (event) => {
+      const value = event.target.dataset.filter;
+      const singleCar = document.querySelectorAll('.single-car');
+
+      singleCar.forEach(car => {
+        if (value === 'all') {
+          car.style.display = 'block';
+        }
+        else {
+          (!car.classList.contains(value)) ? (car.style.display = 'none') :
+            (car.style.display = 'block');
+        }
+      });
+    });
+  });
+})();
+// show modal
