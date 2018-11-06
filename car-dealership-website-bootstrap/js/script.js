@@ -146,3 +146,22 @@ const FilterCars = (() => {
   });
 })();
 // show modal
+const Gallery = (() => {
+  // all items
+  const items = document.querySelectorAll('.gallery-item');
+  // modal
+  const showcase = document.querySelector('.showcase');
+
+  items.forEach(item => {
+    item.addEventListener('click', (event) => {
+      showcase.classList.add('showcase-show');
+      if (event.target.classList.contains('gallery-item')) {
+        let src = event.target.childNodes[1].src;
+        document.querySelector('.showcase-img').src = src;
+      }
+    });
+  });
+  document.querySelector('.showcase-close').addEventListener('click', () => {
+    showcase.classList.remove('showcase-show');
+  });
+})();
